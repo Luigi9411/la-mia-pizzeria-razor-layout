@@ -1,8 +1,93 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    Layout = null;
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+@*esercizio 1*@
+@{
+    string name = "Luigi";
+    string lastname = "Sciavicco";
+
+        <h2>@name @lastname</h2>
+    
+}
+
+@*esercizio 2*@
+
+@{
+    void SumNum(int n)
+    {
+        int sum = 0;
+        for (int i = 1; i <= n; i++)
+        {
+            sum += i;
+        }
+        <span>@sum</span>
+    }
+
+    <div>
+    <span>Somma da 1 fino a 3 = 
+    @{
+            SumNum(3);
+     }
+    </span>
+    </div>
+}
+
+@*esercizio 3*@
+
+@{
+    string phrase = "nel mezzo del cammin di nostra vita";
+    int count = 0;
+    foreach (var a in phrase)
+    {
+        if (a == 'a')
+        {
+            count++;
+        }
+    }
+    <div>
+        <span>La lettera "a" nella frase: @phrase è ripetuta = @count</span>
+    </div> 
+}
+
+@*esercizio 4*@
+
+<div>
+    I numeri compresi tra 20 e 70 sono:
+
+@{
+   Random random = new Random();
+
+  List<int> nums = new List<int>
+                        ();
+                        for (int i = 0; i < 20; i++)
+                        {
+                        int num = random.Next(1, 91);
+                        nums.Add(num);
+                        }
+                            foreach (int num in nums)
+                            {
+                            if (num >= 20 && num <= 70)
+                            {
+                               <span>@num</span>
+                            }
+                            }
+}
 </div>
+
+@*esercizio 5*@
+
+        @{
+
+            DateT dateTime = new DateT();
+            string dateHour = dateTime.getDateHour();
+        }
+
+    <div>
+    <span>
+      Data e ora attuale:
+      @dateHour
+    </span>
+    </div>
+
