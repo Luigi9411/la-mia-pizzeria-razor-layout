@@ -78,11 +78,13 @@
 
 @*esercizio 5*@
 
-        @{
-
-            DateT dateTime = new DateT();
-            string dateHour = dateTime.getDateHour();
-        }
+@{
+    DateT dateTime = new DateT();
+    string dateHour = dateTime.getDateHour();
+    string dateSeven = dateTime.getDateSevenDaysAgo();
+    string dayOfWeek = dateTime.getDayOfWeekToday();
+    string dayOfWeekOneYear = dateTime.getDayOfWeekOneYearFromNow();
+}
 
     <div>
     <span>
@@ -91,3 +93,25 @@
     </span>
     </div>
 
+@*esercizio 6*@
+
+<div>
+    <span>
+        Data di sette giorni prima:
+        @dateSeven
+    </span>
+</div>    
+
+<div>
+    <span>
+        Che giorno della settimana è oggi:
+        @dayOfWeek
+    </span>
+</div>
+
+<div>
+    <span>
+        Che giorno della settimana sarà nello stesso giorno e mese di oggi ma tra un anno:
+        @dayOfWeekOneYear
+    </span>
+</div>  
